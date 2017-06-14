@@ -11,8 +11,20 @@
     <title>Giphy API: AngularJS Edition</title>
   </head>
 
-  <body>
-    <h1></h1>
+  <body ng-app='myApp'>
+    <header ng-controller='HttpController as hc'>
+      <h1>Giphy API: AngularJS Edition</h1>
+      <input type="text" name="txtSearch" placeholder="search" ng-model='string'>
+      <button type="button" name="cmdSearch" ng-click='hc.newSearch(string)'>GO!</button><br>
+      <button type="button" name="cmdRandom" ng-click='hc.random()'>RANDOM!</button>
+      <hr>
+    </header>
+
+    <div class='gifs' ng-controller='HttpController as hc'>
+      GIFs to go here...
+      <ng-view></ng-view>
+
+    </div>
 
   </body>
 

@@ -1,3 +1,8 @@
-h1, h2 {
+h1, h2, input, button {
   font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+.gifs {
+  margin: auto 50px;
 }
