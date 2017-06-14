@@ -5,6 +5,8 @@ var myApp = angular.module('myApp', []);
 myApp.controller('HttpController', function($http) {
 	var vm = this;
 
+	vm.search = [];
+
 	// START startUp
 	vm.startUp = function() {
 		console.log('from startUp function');
@@ -14,11 +16,13 @@ myApp.controller('HttpController', function($http) {
 
 	// START newSearch
 	vm.newSearch = function(string) {
-		var searchURL = 'http://api.giphy.com/v1/gifs/search?q=' + string + '&api_key=dc6zaTOxFJmzC';
-		console.log(searchURL);
-		// console.log(search);
-		$http.get('/', searchURL).then(function(response) {
-			console.log('return:', response);
+		vm.searchURL = 'http://api.giphy.com/v1/gifs/search?q=' + string + '&api_key=dc6zaTOxFJmzC';
+		$http.get(vm.searchURL).then(function(response) {
+			for (var i = 0; i < response.data.data.length; i++) {
+				vm.gifs = response.data.data[i].images.downsized.url;
+				vm.search.push(vm.gifs);
+			}
+			console.log(vm.search);
 		});
 	}; // END newSearch
 
@@ -26,6 +30,12 @@ myApp.controller('HttpController', function($http) {
 	// START random
 	vm.random = function() {
 		console.log('random clicked');
+		vm.searchURL = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&';
+		$http.get(vm.searchURL).then(function(response) {
+			vm.gif = response.data.data.image_url;
+			console.log(response);
+		});
+
 	}; // END random
 
 

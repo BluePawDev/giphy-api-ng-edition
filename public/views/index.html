@@ -11,21 +11,37 @@
     <title>Giphy API: AngularJS Edition</title>
   </head>
 
-  <body ng-app='myApp'>
-    <header ng-controller='HttpController as hc'>
-      <h1>Giphy API: AngularJS Edition</h1>
-      <input type="text" name="txtSearch" placeholder="search" ng-model='string'>
-      <button type="button" name="cmdSearch" ng-click='hc.newSearch(string)'>GO!</button><br>
-      <button type="button" name="cmdRandom" ng-click='hc.random()'>RANDOM!</button>
-      <hr>
-    </header>
+  <!-- START body -->
 
-    <div class='gifs' ng-controller='HttpController as hc'>
-      GIFs to go here...
-      <ng-view></ng-view>
+  <body ng-app='myApp'>
+    <div ng-controller='HttpController as hc'>
+      <header>
+        <h1>Giphy API: AngularJS Edition</h1>
+        <input type="text" name="txtSearch" placeholder="search" ng-model='string'>
+        <button type="button" name="cmdSearch" ng-click='hc.newSearch(string)'>GO!</button><br>
+        <button type="button" name="cmdRandom" ng-click='hc.random()'>RANDOM!</button>
+        <hr>
+      </header>
+
+      <div>
+        <div ng-repeat='gifs in hc.search track by $index'>
+
+          <img ng-src="{{gifs}}">
+
+        </div>
+        <div>
+          <img ng-src="{{hc.gif}}">
+
+        </div>
+
+      </div>
 
     </div>
 
+
+
+
   </body>
+  <!-- END body -->
 
 </html>

@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.use('/', index);
-app.use('/randGif', randGif);
+// app.use('/randGif', randGif);
 
 /* GLOBALS */
 var port = process.env.PORT || 7500;
