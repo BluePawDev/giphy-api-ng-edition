@@ -7,11 +7,11 @@ myApp.controller('HttpController', function($http) {
 
 	vm.search = [];
 
-	// START startUp
-	vm.startUp = function() {
-		console.log('from startUp function');
-		vm.random();
-	}; // END startUp
+	// // START startUp
+	// vm.startUp = function() {
+	// 	console.log('from startUp function');
+	// 	vm.random();
+	// }; // END startUp
 
 
 	// START newSearch
