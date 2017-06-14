@@ -1,0 +1,25 @@
+{
+  "name": "giphy-api-ng-edition",
+  "version": "1.0.0",
+  "description": "giphy-api-ng-edition",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BluePawDev/giphy-api-ng-edition.git"
+  },
+  "author": "jaruby@me.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BluePawDev/giphy-api-ng-edition/issues"
+  },
+  "homepage": "https://github.com/BluePawDev/giphy-api-ng-edition#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "node": "0.0.0"
+  }
+}
