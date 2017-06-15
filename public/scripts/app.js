@@ -2,16 +2,11 @@ var myApp = angular.module('myApp', []);
 
 
 // START HttpController
-myApp.controller('HttpController', function($http) {
+myApp.controller('HttpController', function($http, randomGif) {
+
 	var vm = this;
 
 	vm.search = [];
-
-	// // START startUp
-	// vm.startUp = function() {
-	// 	console.log('from startUp function');
-	// 	vm.random();
-	// }; // END startUp
 
 
 	// START newSearch
@@ -27,16 +22,22 @@ myApp.controller('HttpController', function($http) {
 	}; // END newSearch
 
 
-	// START random
-	vm.random = function() {
-		console.log('random clicked');
-		vm.searchURL = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&';
-		$http.get(vm.searchURL).then(function(response) {
-			vm.gif = response.data.data.image_url;
-			console.log(response);
-		});
+	// // START random
+	// vm.random = function() {
+	// 	console.log('random clicked');
+	// 	vm.searchURL = 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&';
+	// 	$http.get(vm.searchURL).then(function(response) {
+	// 		vm.gif = response.data.data.image_url;
+	// 		console.log(response);
+	// 	});
+	//
+	// }; // END random
 
-	}; // END random
+	vm.random = function() {
+		console.log('rand');
+	}
+
+
 
 
 }); // END HttpController
